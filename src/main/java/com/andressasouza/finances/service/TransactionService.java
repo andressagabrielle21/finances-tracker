@@ -17,12 +17,15 @@ public class TransactionService {
 
     public BigDecimal getBalance(Long userId) {
         return jdbcTemplate.execute(
-        (ConnectionCallback<BigDecimal> -> {
-            CallableStatement stmt = conn.prepareCall("? = call OBTER_SALDO_POR_USUARIO");
+        (ConnectionCallback<BigDecimal>) -> {
+            CallableStatement stmt = conn.prepareCall("{ ? = call OBTER_SALDO_POR_USUARIO(?) }");
             stmt.registerOutParameter(1, Types.NUMERIC);
-            stmt.setLong()
+            stmt.setLong(2, userId);
+            stmt.execute();
+
+            return stmt.getBigDecimal(1);
         
-        })
+        }
         );
     }
 }
