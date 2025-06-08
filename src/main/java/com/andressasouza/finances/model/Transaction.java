@@ -26,6 +26,7 @@ public class Transaction {
   private Long id;
 
   @ManyToOne // RELAÇÃO: Muitas transações para um usuário
+  //  Ao salvar uma transação, se está ligando automaticamente a um usuário existente, o JPA irá associar automaticamente a chave estrangeira
   @JoinColumn(name= "user_id")
   private User user;
 

@@ -1,0 +1,8 @@
+CONTROLLER: 
+  - ENTRADA DA APLICAÇÃO (API) | PONTO DE ENTRADA DA APLICAÇÃO
+  - Recebe as requisições do usuário e DIRECIONA para o SERVICE.
+  - Como o graçom. Você faz o pedido, ele passa para a cozinha (SERVICE) e te entrega o pedido pronto. 
+
+  - Camada que expõe os endpoints HTTP. Recebe requisições do usuário (API ou Frontend) e conversa com Service.
+
+@RestController // Indicará que esta classe serve para endpoints REST

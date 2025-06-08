@@ -1,0 +1,15 @@
+REPOSITORY:
+  - CONECTA O JAVA AO BANCO DE DADOS 
+  - Camada responsável por acessar e manipular o banco de dados
+  - Essa camada não apresenta a lógica do negócio, apenas o CRUD (COMO BUSCAR OU SALVAR NO BANCO)
+
+  - APENAS faz as operações que lhe foram designadas pelo chefe (SERVICE).
+
+* Geralmente são INTERFACES por conta do Spring Data JPA, que gera automaticamente a implementação delas em runtime.
+  
+  " public interface CategoriaRepository extends JpaRepository<Categoria, Long> { } "
+  - Quero que o Spring crie um repositório para a entidade Categoria com ID do tipo Long
+  - Que herda do JpaRepository, métodos como: save(), findById(), findAll(), deleteById()
+    - Sem precisar ser implementado manualmente
+
+-> O Spring cria uma classe concreta que implementa a interface e conecta com o banco usando JPA/Hibernate.

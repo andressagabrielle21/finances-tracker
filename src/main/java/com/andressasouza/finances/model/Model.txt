@@ -1,0 +1,22 @@
+MODEL ou ENTIDADES:
+  - REPRESENTA OS DADOS
+  - Representação do mundo real no seu sistema
+  - Dados que o sistema manipula. Reflexo das tabelas do banco
+  - Molde dos dados que serão salvos no banco
+
+
+* @Entity // Indica ao Spring que esta classe será armazenada no BD
+* @Table(name = "CATEGORIAS") // Nome da tabela no banco
+* @Data // Gera getters, setters, equals, hashCode e toString automaticamente
+
+* @ManyToOne // RELAÇÃO: Muitas transações para um usuário
+
+- Jakarta Persistence: Ferramenta para persistência de dados
+
+----- DTO -----
+
+- Objetos usados para TRANSPORTAR dados entre camadas da aplicação, principalmente quando falamos de entrada/saída da API.
+
+* São úteis para não expor as estruturas das entidades para o mundo externo.
+* Controlar o que entra e sai pela API (Segurança)
+* Evita dependência da estrutura da entidade.

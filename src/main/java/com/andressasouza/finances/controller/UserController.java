@@ -1,5 +1,4 @@
-// ENTRADA DA APLICAÇÃO (API) | PONTO DE ENTRADA DA APLICAÇÃO: Recebe as requisições do usuário e DIRECIONA para o SERVICE.
-//                             Como o graçom. Você faz o pedido, ele passa para a cozinha (SERVICE) e te entrega o pedido pronto. 
+
 package com.andressasouza.finances.controller;
 
 import java.util.List;
@@ -16,7 +15,6 @@ import com.andressasouza.finances.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
 
-// Essa camada expõe os endpoints HTTP. Recebe requisições do usuário (API ou Frontend) e conversa com Service.
 
 @RestController
 @RequestMapping("/users")
@@ -26,7 +24,7 @@ public class UserController {
 
     @PostMapping 
     public ResponseEntity<User> newUser(@RequestBody User user) {
-        User save = UserRepository.save(user);
+        User save = UserService.save(user);
         return ResponseEntity.ok(save);
     }
 

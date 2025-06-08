@@ -16,7 +16,7 @@ public class CategoryService {
   private final CategoryRepository categoryRepository;
 
   // MÉTODOS HERDADOS PELO JpaRepository
-  public Category save(Category category) {
+  public Category newCategory(Category category) {
     return categoryRepository.save(category);
   }
 

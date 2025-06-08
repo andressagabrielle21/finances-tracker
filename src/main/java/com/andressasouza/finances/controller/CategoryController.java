@@ -23,7 +23,7 @@ public class CategoryController {
 
     @PostMapping // Para criar categoria POST/categorias
     public ResponseEntity<Category> newCategory(@RequestBody Category category) {
-        Category save = categoryService.save(category);
+        Category save = categoryService.newCategory(category);
         return ResponseEntity.ok(save); // Resposta HTTP 200 com a categoria salva
     }
 

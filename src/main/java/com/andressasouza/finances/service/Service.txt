@@ -1,0 +1,11 @@
+SERVICE: 
+  - REGRAS DE NEGÓCIO (LÓGICA DO SISTEMA)
+  - Cálculos, validações, interações com mútiplos modelos ou chamadas a procedures. 
+  - Decide o que pode ou não pode ser feito com os dados. 
+      * Ex: Não deixar cadastrar transação com valor negativo 
+
+  🔴 Quem aprova ou desaprova o que os CONTROLLERS trazem para dentro do sistema. 🔴
+
+@Service // Identifica ao Spring que a classe é um service/Lógica da negócio
+
+@RequiredArgsConstructor // Cria o construtor com TODOS os campos finais 
