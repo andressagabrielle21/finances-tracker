@@ -1,3 +1,6 @@
+//  OU ENTIDADES
+// REPRESENTA OS DADOS: Representação do mundo real no seu sistema
+
 package com.andressasouza.finances.model;
 
 import jakarta.persistence.Entity;
@@ -14,6 +17,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
+    // Dados que o sistema manipula. Reflexo das tabelas do banco; Molde dos dados que serão salvos no banco
     @jakarta.persistence.Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 

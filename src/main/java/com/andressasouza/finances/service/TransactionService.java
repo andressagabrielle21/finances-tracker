@@ -1,3 +1,8 @@
+// REGRAS DE NEGÓCIO (LÓGICA DO SISTEMA): Cálculos, validações, interações com mútiplos modelos ou 
+//                                        chamadas a procedures. 
+//                                        Decide o que pode ou não pode ser feito com os dados.
+//                                        Ex: Não deixar cadastrar transação com valor negativo 
+
 package com.andressasouza.finances.service;
 
 import java.math.BigDecimal;
