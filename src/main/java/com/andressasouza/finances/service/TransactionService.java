@@ -5,32 +5,26 @@
 
 package com.andressasouza.finances.service;
 
-import java.math.BigDecimal;
-import java.sql.CallableStatement;
-import java.sql.Types;
+import java.util.List;
 
-import org.springframework.jdbc.core.ConnectionCallback;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
+
+import com.andressasouza.finances.model.Transaction;
+import com.andressasouza.finances.repository.TransactionRepository;
 
 import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
 public class TransactionService {
-    private final JdbcTemplate jdbcTemplate;
+    
+    private final TransactionRepository transactionRepository;
 
-    public BigDecimal getBalance(Long userId) {
-        return jdbcTemplate.execute(
-        (ConnectionCallback<BigDecimal>) -> {
-            CallableStatement stmt = conn.prepareCall("{ ? = call OBTER_SALDO_POR_USUARIO(?) }");
-            stmt.registerOutParameter(1, Types.NUMERIC);
-            stmt.setLong(2, userId);
-            stmt.execute();
+    public Transaction newTransaction(Transaction transaction) {
+        return transactionRepository.save(transaction);
+    }
 
-            return stmt.getBigDecimal(1);
-        
-        }
-        );
+    public List<Transaction> listAll() {
+        return transactionRepository.findAll();
     }
 }
