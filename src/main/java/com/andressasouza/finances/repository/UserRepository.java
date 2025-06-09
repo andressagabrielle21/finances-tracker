@@ -11,5 +11,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
     // SPRING JPA cria os SQLs baseado no nome dos métodos
     Optional<User> findByEmail(String email);
 
+    @Override
     List<User> findAll();
 }

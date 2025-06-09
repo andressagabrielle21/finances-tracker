@@ -36,7 +36,7 @@ public class Transaction {
 
   private BigDecimal value; // BigDecimal para precisão financeira
 
-  private LocalDate date;
+  private LocalDate dateTime;
 
   private String description;
 
